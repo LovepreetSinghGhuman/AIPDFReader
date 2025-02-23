@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 50px;
+}
+.upload-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+.upload-form h2 {
+    text-align: center;
+}
+.upload-form input[type="file"] {
+    margin-bottom: 20px;
+}
+.upload-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.upload-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
