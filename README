@@ -1,0 +1,32 @@
+# PDF Text Extraction and Topic Modeling
+
+This program extracts text from PDFs, cleans it, and writes the cleaned text into a CSV file. It supports multiple languages (English, Dutch, and French) and uses parallel processing for efficient text extraction and cleaning.
+
+## Features
+
+- **Text Extraction**: Extracts text from PDFs using `pdfplumber`.
+- **Language Detection**: Detects the language of the text using `langdetect`.
+- **Text Cleaning**: Cleans the text using `spaCy` for tokenization, lemmatization, and stopword removal.
+- **Parallel Processing**: Uses `ProcessPoolExecutor` for parallel processing of PDFs with a configurable limit on concurrent processes.
+- **Error Handling**: Includes robust error handling for PDF extraction, language detection, and CSV writing.
+- **Output**: Saves the cleaned text to a CSV file for further analysis.
+
+## Requirements
+
+- Python 3.12.0 (required for compatibility with `spaCy`).
+- Required Python packages:
+  - `pdfplumber`
+  - `spaCy`
+  - `langdetect`
+  - `pandas`
+  - `tqdm`
+  - `bertopic`
+  - `nltk`
+  - `wordsegment`
+
+## Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/pdf-text-extraction.git
+   cd pdf-text-extraction
