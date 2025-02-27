@@ -1,0 +1,5 @@
+{
+    "pdf_directory": "papers",
+    "cleaned_csv": "csv/cleanedpdfsV5.csv",
+    "gdpr_csv": "csv/gdprcomplianedV5.csv"
+}
