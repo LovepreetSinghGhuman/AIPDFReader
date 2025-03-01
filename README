@@ -1,32 +1,58 @@
-# PDF Text Extraction and Topic Modeling
+# PDF Text Extraction and Topic Modeling with BERTopic
 
-This program extracts text from PDFs, cleans it, and writes the cleaned text into a CSV file. It supports multiple languages (English, Dutch, and French) and uses parallel processing for efficient text extraction and cleaning.
+## Overview
+This project extracts text from PDFs, cleans it, and performs topic modeling using BERTopic. The workflow includes:
 
-## Features
-
-- **Text Extraction**: Extracts text from PDFs using `pdfplumber`.
-- **Language Detection**: Detects the language of the text using `langdetect`.
-- **Text Cleaning**: Cleans the text using `spaCy` for tokenization, lemmatization, and stopword removal.
-- **Parallel Processing**: Uses `ProcessPoolExecutor` for parallel processing of PDFs with a configurable limit on concurrent processes.
-- **Error Handling**: Includes robust error handling for PDF extraction, language detection, and CSV writing.
-- **Output**: Saves the cleaned text to a CSV file for further analysis.
+1. Extracting text from PDFs using `PyMuPDF (fitz)`.
+2. Cleaning the text using `spaCy`, with support for English, Dutch, and French.
+3. Detecting the language of extracted text using `langid`.
+4. Performing topic modeling with BERTopic.
+5. Visualizing topic distributions and key term representations.
 
 ## Requirements
+Ensure you have the following dependencies installed:
+```bash
+pip install pandas numpy spacy bertopic langid tqdm wordsegment matplotlib seaborn langdetect fitz scikit-learn
+```
+Additionally, download the necessary `spaCy` language models:
+```bash
+python -m spacy download en_core_web_lg
+python -m spacy download nl_core_news_lg
+python -m spacy download fr_core_news_lg
+```
 
-- Python 3.12.0 (required for compatibility with `spaCy`).
-- Required Python packages:
-  - `pdfplumber`
-  - `spaCy`
-  - `langdetect`
-  - `pandas`
-  - `tqdm`
-  - `bertopic`
-  - `nltk`
-  - `wordsegment`
+## Configuration
+Modify `config.json` to set the required paths:
+```json
+{
+    "pdf_directory": "path/to/pdf/folder",
+    "cleaned_csv": "output/cleaned_text.csv",
+    "gdpr_csv": "output/gdpr_filtered.csv"
+}
+```
 
-## Installation
+## Running the Notebook
+1. Place PDFs in the specified directory.
+2. Run the notebook cells to extract, clean, and process text.
+3. Review the generated CSV files for cleaned text.
+4. Execute BERTopic modeling to analyze extracted topics.
+5. Use the visualization tools to explore topic insights.
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/pdf-text-extraction.git
-   cd pdf-text-extraction
+## Key Features
+- **Advanced Text Preprocessing:** Cleans ligatures, removes unwanted references, and detects language.
+- **Automated Processing:** Reads multiple PDFs and exports structured data.
+- **Topic Modeling with BERTopic:** Extracts key themes and visualizes topic distributions.
+- **Flexible Language Support:** Handles multilingual texts with `spaCy` and `langid`.
+
+## Output Files
+- `cleaned_text.csv`: Extracted and processed text with language labels.
+- `gdpr_filtered.csv`: Text filtered for GDPR-related content.
+- `bertopic_model`: Serialized BERTopic model for further analysis.
+
+## Future Improvements
+- Implement Named Entity Recognition (NER) for additional insights.
+- Enhance language detection accuracy by combining multiple approaches.
+- Optimize processing speed for large PDF datasets.
+
+## License
+This project is open-source and available for modification and improvement.

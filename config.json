@@ -1,5 +1,5 @@
 {
     "pdf_directory": "papers",
-    "cleaned_csv": "csv/cleanedpdfsV5.csv",
-    "gdpr_csv": "csv/gdprcomplianedV5.csv"
+    "cleaned_csv": "csv/cleaned/cleanedpdfsV5.csv",
+    "gdpr_csv": "csv/gdpr/gdprcompliantV5.csv"
 }
